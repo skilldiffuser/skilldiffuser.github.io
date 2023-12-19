@@ -134,7 +134,7 @@ select {
   content: ""
 }
 .caption {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
 }
 
 @media only screen and (max-width: 400px) {

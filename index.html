@@ -32,11 +32,19 @@
           <div class="bar"></div
         ></a>
         <a class="barWrapper" clear href="#tr2-a" id="bar3"
-          ><span>Framework of AdaptDiffuser</span>
+          ><span>Framework of SkillDiffuser</span>
           <div class="bar"></div
         ></a>
         <a class="barWrapper" clear href="#results-a" id="bar4"
           ><span>Results</span>
+          <div class="bar"></div
+        ></a>
+        <a class="barWrapper" clear href="#results-b" id="bar5"
+          ><span>Visualizations</span>
+          <div class="bar"></div
+        ></a>
+        <a class="barWrapper" clear href="#citation" id="bar6"
+          ><span>Citation</span>
           <div class="bar"></div
         ></a>
 <!--        <a class="barWrapper" clear href="#attn-a" id="bar5"-->
@@ -200,7 +208,7 @@
         <h3 style="margin-bottom: 0">Task-wise Performance on LOReL Dataset</h3>
         <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: center">
         <img
-          style="width: 65%; height: auto; margin-top: 1.2em"
+          style="width: 55%; height: auto; margin-top: 1.2em"
           src="./public/images/lorel_bar.png"
         />
         </div>
@@ -209,7 +217,7 @@
         </p>
         <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: center">
         <img
-          style="width: 65%; height: auto; margin-top: 1.2em"
+          style="width: 55%; height: auto; margin-top: 1.2em"
           src="./public/images/rephrase_bar.png"
         />
         </div>
@@ -219,50 +227,71 @@
         <p style="font-family: 'Times New Roman',serif">
           As can be seen from the figures, especially from Fig. 2, <strong>our method's average performance on 5 rephrases is nearly 10 percentage points higher than the previous SOTA</strong>, which demonstrates its strong robustness against ambiguous language instructions.</p>
 
-<!--        <h3 style="margin-bottom: 0">MuJoCo Locomotion Task</h3>-->
-<!--        <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: space-between">-->
-<!--          <video autoplay="" muted="" loop="" width="25%">-->
-<!--          <source src="./public/video/fine/halfcheetah-medium.mp4" type="video/mp4" />-->
-<!--        </video>-->
+        <h3 style="margin-bottom: 0">Task-wise Performance on Meta-World Dataset</h3>
+        <p style="font-family: 'Times New Roman',serif"> We also provide the task-wise success-rates on Meta-World MT10 dataset in Fig. 4, achieved by Flat R3M, Language-conditioned Diffuser and our SkillDIffuser.</p>
+        <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: center">
+        <img
+          style="width: 55%; height: auto; margin-top: 0"
+          src="./public/images/MT10_task.png"
+        />
+        </div>
+        <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0.5em">
+          <strong>Fig.3 Partially visual observations of all the 10 tasks in Meta-World MT10 Dataset.</strong>
+        </p>
+        <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: center">
+        <img
+          style="width: 60%; height: auto; margin-top: 0.5em"
+          src="./public/images/bar2.png"
+        />
+          </div>
+        <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0">
+          <strong>Fig.4 Task-wise success rates (in %) on Meta-World MT10 Dataset.</strong>
+        </p>
 
-<!--        <video autoplay="" muted="" loop="" width="25%">-->
-<!--          <source src="./public/video/fine/hopper-medium-v2.mp4" type="video/mp4" />-->
-<!--        </video>-->
+        <a class="anchor" id="results-b"></a>
+        <h2>Visualizations</h2>
+        <h3 style="margin-bottom: 0">Word Cloud of Learned Skills</h3>
+        <p style="font-family: 'Times New Roman',serif">The model has successfully mastered multiple key skills (we pick 8 of them for visualization here). These skills demonstrate strong <strong>robustness to ambiguous language instructions</strong>. For instance, in Fig. 5, skill 4 effectively abstracts the skill of "open a drawer'" from ambiguous expressions such as "<em>open a container</em>", "<em>pull a dresser</em>", "<em>pull a drawer</em>" and random combinations of these words. Similarly, skill 6 extracts the skill of "<em>turn a faucet to the left</em>".  This analysis indicates our method's resilience to varied and poorly defined language inputs, confirming our SkillDiffuser can competently interpret and act upon a wide range of linguistic instructions, even those that are ambiguous or incomplete.</p>
+        <div style="display: flex; margin: auto; width: 100%; height: auto">
+          <div>
+        <img
+          style="width: 100%; height: auto; margin-top: 0.5em"
+          src="./public/images/wordcloud1.png"
+        />
+            <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0">
+              <strong>Fig.5 Word cloud of learned skills in LOReL Sawyer Dataset.</strong> We show eight of them here with the size corresponding to the word frequency in one skill.
+        </p>
+          </div>
+          &nbsp;&nbsp;
+          <div>
+          <img
+          style="width: 100%; height: auto; margin-top: 0.5em"
+          src="./public/images/wordcloud2.png"
+        />
+            <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0">
+              <strong>Fig.6 Word cloud of learned skills in Meta-World MT10 Dataset.</strong> We show eight of them here with the size corresponding to the word frequency in one skill.
+        </p>
+            </div>
+        </div>
 
-<!--          <video autoplay="" muted="" loop="" width="25%">-->
-<!--          <source src="./public/video/fine/walker2d-medium-v2.mp4" type="video/mp4" />-->
-<!--        </video>-->
-<!--        </div>-->
-<!--        <div class="col-title" style="display: flex; width: 95%; height: auto; justify-content: space-between; margin: 0; font-family: 'Times New Roman',serif">-->
-<!--            <p style="margin-left: 4em">HalfCheetah Medium</p>-->
-<!--            <p>Hopper Medium</p>-->
-<!--            <p style="margin-right: 2em">Walker2d Medium</p>-->
-<!--          </div>-->
-<!--        <h3>Demos of KUKA Pick and Place Task</h3>-->
-<!--        <div style="display: flex; margin: auto; width: 95%; height: auto">-->
-<!--        <video autoplay="" muted="" loop="" width="50%">-->
-<!--          <source src="./public/video/video2.mp4" type="video/mp4" />-->
-<!--        </video>-->
-<!--          &nbsp;&nbsp;&nbsp;&nbsp;-->
-<!--          <video autoplay="" muted="" loop="" width="50%">-->
-<!--          <source src="./public/video/video1.mp4" type="video/mp4" />-->
-<!--        </video>-->
-<!--        </div>-->
+        <h3 style="margin-bottom: 0">Heat Map of Word Frequency</h3>
+        <div>
+        <div style="display: flex; margin: auto; width: 100%; height: auto; justify-content: center">
+        <img
+          style="width: 70%; height: auto; margin-top: 1em; margin-bottom: 0.3em"
+          src="./public/images/heatmap1.png"
+        />
+          </div>
+          <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0.5em">
+          <strong>Fig.7 Visualization of skill heat map on LOReL. </strong>
+        </p>
+        </div>
+        <p style="font-family: 'Times New Roman',serif"> We show the visualization results of skill set on LOReL Sawyer Dataset in Fig. 7. The visualization results show that out of a 20-size skill-set, our SkillDiffuser learned 11 skills (<em>e.g. shut close container drawer, pull drawer handle etc.</em>) notably distinguished by their unique word highlights. The results demonstrate strong skill abstraction abilities. For example, the skill "<em>shut close container drawer</em>" abstracts different expressions like "<em>shut drawer</em>", "<em>shut container</em>" into one skill semantic.</p>
 
-<!--        <a class="anchor" id="attn-a"></a>-->
-<!--        <h2>Attention Analysis</h2>-->
-<!--        <p>-->
-<!--          To get an insight into how the transformer architecture enables the-->
-<!--          policy to solve environments more succesfully, we analyze the learned-->
-<!--          attention on the Couch Moving environment.-->
-<!--        </p>-->
-<!--        <div class="attn-video" style="text-align: center">-->
-<!--          <video autoplay="" muted="" loop="" height="100%" style="width: 75%">-->
-<!--            <source src="./public/videos/attn.mp4" type="video/mp4" />-->
-<!--          </video>-->
-<!--        </div>-->
       </section>
+
       <section class="citation" style="text-align: justify;">
+        <a class="anchor" id="citation"></a>
         <h2>Bibtex</h2>
         <pre>
 <code>@article{liang2023skilldiffuser,
