@@ -133,6 +133,12 @@
           <p>
             <sup>&#8224;</sup>Corresponding authors
           </p>
+        </section>
+        <section class="conference">
+          <h3>
+          CVPR 2024
+          </h3>
+        </section>
         <section class="links">
           <ul>
             <a href="https://arxiv.org/abs/2312.11598" rel="noreferrer" target="_blank">
@@ -141,16 +147,6 @@
                 ><span>Paper</span>
               </li>
             </a>
-<!--            <a-->
-<!--              href="https://youtu.be/ZjRYlRRV9IA"-->
-<!--              rel="noreferrer"-->
-<!--              target="_blank"-->
-<!--            >-->
-<!--              <li>-->
-<!--                <span class="icon"> <img src="./public/video.svg" /> </span-->
-<!--                ><span>Video</span>-->
-<!--              </li>-->
-<!--            </a>-->
             <a
               href="https://skilldiffuser.github.io/"
               rel="noreferrer"
@@ -160,16 +156,26 @@
                 <span class="icon">
                   <img src="./public/github.svg" />
                 </span>
-                <span>Code</span>
+                <span>Website</span>
               </li>
             </a>
-            <!-- <a><li>Video</li></a> -->
+            <a
+              href="https://connecthkuhk-my.sharepoint.com/:f:/g/personal/liangzx_connect_hku_hk/EsG1hKy8HBJOu3dalCZJPjoBUAseo_fMKZykG6H2qhh0Dg"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <li>
+                <span class="icon"> <img src="./public/database.svg" style="width: 100%;filter: invert(100%); stroke-width: 200%"/> </span
+                ><span>Dataset</span>
+              </li>
+            </a>
+<!--             <a><li>Video</li></a> -->
           </ul>
         </section>
         <a class="anchor" id="abstract-a"></a>
         <h2>Abstract</h2>
         <p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: justify">
-          Diffusion models have demonstrated strong potential in robotic trajectory planning. However, generating coherent and long-horizon trajectories from high-level instructions remains challenging, especially for complex tasks requiring multiple sequential skills. We propose SkillDiffuser, an end-to-end hierarchical planning framework integrating interpretable skill learning with conditional diffusion planning to address this problem. At the higher level, the skill abstraction module learns discrete, human-understandable skill representations from visual observations and language instructions. These learned skill embeddings are then used to condition the diffusion model to generate customized latent trajectories aligned with the skills. It allows for generating diverse state trajectories that adhere to the learnable skills. By integrating skill learning with conditional trajectory generation, SkillDiffuser produces coherent behavior following abstract instructions across diverse tasks. Experiments on multitask robotic manipulation benchmarks like Meta-World and LOReL demonstrate state-of-the-art performance and human-interpretable skill representations from SkillDiffuser.
+          Diffusion models have demonstrated strong potential for robotic trajectory planning. However, generating coherent trajectories from high-level instructions remains challenging, especially for long-range composition tasks requiring multiple sequential skills. We propose SkillDiffuser, an end-to-end hierarchical planning framework integrating interpretable skill learning with conditional diffusion planning to address this problem. At the higher level, the skill abstraction module learns discrete, human-understandable skill representations from visual observations and language instructions. These learned skill embeddings are then used to condition the diffusion model to generate customized latent trajectories aligned with the skills. This allows generating diverse state trajectories that adhere to the learnable skills. By integrating skill learning with conditional trajectory generation, SkillDiffuser produces coherent behavior following abstract instructions across diverse tasks. Experiments on multi-task robotic manipulation benchmarks like Meta-World and LOReL demonstrate state-of-the-art performance and human-interpretable skill representations from SkillDiffuser.
         </p>
       </section>
 <!--      <section class="head-media">-->
