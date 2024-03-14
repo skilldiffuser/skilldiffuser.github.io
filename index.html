@@ -219,7 +219,7 @@
         />
         </div>
         <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0">
-          <strong>Fig.1 Task-wise success rates (in \%) on LOReL Sawyer Dataset.</strong>
+          <strong>Fig.1 Task-wise success rates (in %) on LOReL Sawyer Dataset.</strong>
         </p>
         <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: center">
         <img
@@ -228,10 +228,33 @@
         />
         </div>
         <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0">
-          <strong>Fig.2 Rephrasal-wise success rates (in \%) on LOReL Sawyer Dataset.</strong>
+          <strong>Fig.2 Rephrasal-wise success rates (in %) on LOReL Sawyer Dataset.</strong>
         </p>
         <p style="font-family: 'Times New Roman',serif">
           As can be seen from the figures, especially from Fig. 2, <strong>our method's average performance on 5 rephrases is nearly 10 percentage points higher than the previous SOTA</strong>, which demonstrates its strong robustness against ambiguous language instructions.</p>
+
+        <h3 style="margin-bottom: 0">Performance on LOReL Compositional Tasks</h3>
+        <p style="font-family: 'Times New Roman',serif">We conduct experiments following the same settings of unseen composition tasks of LISA with 12 composition instructions in Table 1. Detailed instructions are listed in Table 2. We extend the max number of episode steps from customary 20 to 40, as LISA.</p>
+        <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: center">
+        <img
+          style="width: 55%; height: auto; margin-top: 0em"
+          src="./public/images/composition_table.png"
+        />
+        </div>
+        <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0">
+          <strong>Tab.1 Performance on LOReL Multi-step Composition Tasks.</strong>
+        </p>
+        <div style="display: flex; margin: auto; width: 95%; height: auto; justify-content: center">
+        <img
+          style="width: 50%; height: auto; margin-top: 1.2em"
+          src="./public/images/composition_instruc.png"
+        />
+        </div>
+        <p class="caption" style="text-align: center; font-family: 'Times New Roman',serif; margin-top: 0; margin-bottom: 0">
+          <strong>Tab.2 LOReL Composition Task Instructions.</strong>
+        </p>
+
+        <p style="font-family: 'Times New Roman',serif">We observe SkillDiffuser achieves 2x the performance of non-hierarchical baseline (<em>i.e.</em> w/o skill abstraction) and also improves about 25% over LISA, highlighting its effectiveness. MPC-based LOReL planners are unable to perform as well in open scenarios like composition tasks.</p>
 
         <h3 style="margin-bottom: 0">Task-wise Performance on Meta-World Dataset</h3>
         <p style="font-family: 'Times New Roman',serif"> We also provide the task-wise success-rates on Meta-World MT10 dataset in Fig. 4, achieved by Flat R3M, Language-conditioned Diffuser and our SkillDIffuser.</p>
