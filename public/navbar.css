@@ -1,0 +1,199 @@
+/* ----------------------------
+   Custom Navbar Overrides
+   ---------------------------- */
+
+/* 1. 固定顶部，100% 宽度，阴影 */
+.navbar {
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);*/
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* 2. 品牌区和汉堡按钮 */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-burger {
+  display: block;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.navbar-burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 4px 0;
+  background-color: #333;
+  transition: transform .3s ease, opacity .3s ease;
+}
+/* 汉堡展开动画 */
+.navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* 3. 菜单区：默认折叠，展开后水平居中 */
+.navbar-menu {
+  display: none;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-menu.is-active {
+  display: flex;
+}
+
+/* 大屏幕下始终展示菜单，隐藏汉堡 */
+@media (min-width: 1024px) {
+  .navbar-burger { display: none; }
+  .navbar-menu { display: flex !important; }
+}
+
+/* 4. 导航项 & 下拉 */
+.navbar-item,
+.navbar-link {
+  display: block;
+  padding: .5rem 1rem;
+  color: #4a4a4a;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+.navbar-link:not(.is-arrowless) {
+  padding-right: 2rem;
+}
+.navbar-link:not(.is-arrowless)::after {
+  content: "\25BE"; /* ▼ */
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: .6rem;
+  pointer-events: none;
+}
+
+/* 悬停/激活状态 */
+.navbar-link:hover,
+.navbar-link.is-active,
+.navbar-item:hover,
+.navbar-item.is-active {
+  background-color: #fafafa;
+  color: #3273dc;
+}
+
+/* 5. 下拉容器 */
+.navbar-item.has-dropdown {
+  padding: 0;
+}
+.navbar-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: .5rem 0;
+  z-index: 1001;
+}
+.navbar-item.has-dropdown.is-hoverable:hover .navbar-dropdown,
+.navbar-item.has-dropdown.is-active .navbar-dropdown {
+  display: block;
+}
+.navbar-dropdown .navbar-item {
+  padding: .4rem 1rem;
+  white-space: nowrap;
+}
+
+/* 6. 中心对齐起始区域（你的 inline-style 可移除） */
+.navbar-start {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 7. 图标容器 */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ----------------------------
+   End of Navbar Overrides
+   ---------------------------- */
+
+/* 页面内容顶部留出 navbar 高度，避免遮挡 */
+/*body {*/
+/*  padding-top: -1rem;*/
+/*}*/
+
+/* === Navbar 固定 & 中心对齐 & 标题同款字体 === */
+
+/* 1. 固定顶部，100% 宽度，阴影 */
+.navbar {
+  top: 0; left: 0; right: 0;
+  background-color: #fff;
+  z-index: 1000;
+  /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);*/
+
+  /* 用 Grid 三列：左右空白，中间内容最大 960px */
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 960px) 1fr;
+  align-items: center;
+  height: 2.25rem;
+  padding: 0;
+}
+
+/* 2. 把 .navbar-brand 和 .navbar-menu “放到”中间那一列 */
+.navbar-brand,
+.navbar-menu {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+}
+
+/* 3. 移动端（<1024px）下改成单列，并加左右内边距 */
+@media (max-width: 1023px) {
+  .navbar {
+    grid-template-columns: auto;
+    padding: 0 1rem;
+  }
+  .navbar-brand,
+  .navbar-menu {
+    grid-column: 1;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* 4. 菜单文字同主标题样式：继承整体 font-family，加粗 */
+.navbar-item{
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+}
+
+.navbar-link {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
